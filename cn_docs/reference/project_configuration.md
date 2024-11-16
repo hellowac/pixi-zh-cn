@@ -397,7 +397,7 @@ pytorch-cpu = { version = "~=1.1", channel = "pytorch" }
     uv 解析直接包含在锁文件中。
 
 Pixi 直接支持依赖 PyPI 包，PyPA 将分发包称为“分发”。  
-Pixi 支持 [源](https://packaging.python.org/en/latest/specifications/source-distribution-format/) 和 [二进制](https://packaging.python.org/en/latest/specifications/binary-distribution-format/) 分发，  
+Pixi 支持 [源分发](https://hellowac.github.io/pypug-zh-cn/specifications/source-distribution-format.html) 和 [二进制分发](https://hellowac.github.io/pypug-zh-cn/specifications/binary-distribution-format.html) 分发，  
 这些都可以在 Pixi 中使用。  
 这些分发包在 conda 环境解析并安装后安装到环境中。  
 PyPI 包没有在 [prefix.dev](https://prefix.dev/channels) 上索引，但可以在 [pypi.org](https://pypi.org/) 查看。
@@ -408,7 +408,7 @@ PyPI 包没有在 [prefix.dev](https://prefix.dev/channels) 上索引，但可�
 #### 版本规范：
 
 这些依赖项不遵循 conda 的 matchspec 规范。  
-`version` 是根据 [PEP404/PyPA](https://packaging.python.org/en/latest/specifications/version-specifiers/) 定义的版本字符串规范。  
+`version` 是根据 [PEP404/PyPA](https://hellowac.github.io/pypug-zh-cn/specifications/version-specifiers.html) 定义的版本字符串规范。  
 此外，可以包含一个额外的列表，这些是可选的依赖项。  
 请注意，这里的 `version` 与 conda 的 MatchSpec 类型不同。  
 请参见以下示例，了解如何在实践中使用：
@@ -513,7 +513,7 @@ pandas = {url = "https://files.pythonhosted.org/packages/3d/59/2afa81b9fb300c905
 
 #### 源依赖（`sdist`）
 
-[源分发格式](https://packaging.python.org/en/latest/specifications/source-distribution-format/) 是一种基于源代码的格式（简称 sdist），包可以与二进制 wheel 格式一起包含。  
+[源分发格式](https://hellowac.github.io/pypug-zh-cn/specifications/source-distribution-format.html) 是一种基于源代码的格式（简称 sdist），包可以与二进制 wheel 格式一起包含。  
 因为这些分发包需要构建，所以需要一个 Python 可执行文件来完成此操作。  
 这就是为什么在 conda 环境中需要存在 python。  
 源分发通常依赖于系统包来构建，特别是在编译 C/C++ 基于 Python 的绑定时。  

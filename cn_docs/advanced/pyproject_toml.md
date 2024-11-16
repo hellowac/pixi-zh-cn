@@ -207,7 +207,7 @@ requires = ["setuptools >= 40.8.0"]
 build-backend = "setuptools.build_meta:__legacy__"
 ```
 
-强烈建议包括 `[build-system]` 部分。如果你不确定要使用的 [build-backend](https://packaging.python.org/en/latest/tutorials/packaging-projects/#choosing-build-backend)，可以在 `pyproject.toml` 中包含下面的 `[build-system]` 部分作为起点。  
+强烈建议包括 `[build-system]` 部分。如果你不确定要使用的 [build-backend](https://hellowac.github.io/pypug-zh-cn/tutorials/packaging-projects.html#choosing-build-backend)，可以在 `pyproject.toml` 中包含下面的 `[build-system]` 部分作为起点。  
 `pixi init --format pyproject` 默认使用 `hatchling`。  
 `hatchling` 相较于 `setuptools` 的优势可在其 [官网](https://hatch.pypa.io/latest/why/#build-backend) 中查看。
 

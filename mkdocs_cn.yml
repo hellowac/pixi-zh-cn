@@ -60,8 +60,8 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
-repo_url: https://github.com/prefix-dev/pixi/
-edit_uri: edit/main/docs/
+repo_url: https://github.com/hellowac/pixi-zh-cn/
+edit_uri: edit/sync-docs/docs/
 
 markdown_extensions:
   - admonition
@@ -102,7 +102,7 @@ extra:
 nav:
   - 安装: index.md
   - 基本用法: basic_usage.md
-  - 切换来自:
+  - 迁移来自:
       - Poetry: switching_from/poetry.md
       - Conda/Mamba: switching_from/conda.md
   - 更新历史: change_log.md
