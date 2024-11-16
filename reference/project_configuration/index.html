@@ -1,0 +1,2924 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="了解您可以在 pixi.toml 配置中做什么。">
+      
+      
+      
+        <link rel="canonical" href="https://hellowac.github.io/pixi-zh-cn/reference/project_configuration/">
+      
+      
+        <link rel="prev" href="../../advanced/pyproject_toml/">
+      
+      
+        <link rel="next" href="../pixi_configuration/">
+      
+      
+      <link rel="icon" href="../../assets/pixi.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Configuration - Pixi by prefix.dev</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Red+Hat+Text:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Red Hat Text";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Configuration - Pixi by prefix.dev" >
+      
+        <meta  property="og:description"  content="了解您可以在 pixi.toml 配置中做什么。" >
+      
+        <meta  property="og:image"  content="https://hellowac.github.io/pixi-zh-cn/assets/images/social/reference/project_configuration.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://hellowac.github.io/pixi-zh-cn/reference/project_configuration/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Configuration - Pixi by prefix.dev" >
+      
+        <meta  name="twitter:description"  content="了解您可以在 pixi.toml 配置中做什么。" >
+      
+        <meta  name="twitter:image"  content="https://hellowac.github.io/pixi-zh-cn/assets/images/social/reference/project_configuration.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#project" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="https://prefix.dev" title="Pixi by prefix.dev" class="md-header__button md-logo" aria-label="Pixi by prefix.dev" data-md-component="logo">
+      
+  <img src="../../assets/pixi.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pixi by prefix.dev
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Configuration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="prefix-light" data-md-color-accent="prefix-light"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="prefix" data-md-color-accent="prefix"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/prefix-dev/pixi/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://prefix.dev" title="Pixi by prefix.dev" class="md-nav__button md-logo" aria-label="Pixi by prefix.dev" data-md-component="logo">
+      
+  <img src="../../assets/pixi.png" alt="logo">
+
+    </a>
+    Pixi by prefix.dev
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/prefix-dev/pixi/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    安装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic_usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    基本用法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    切换来自
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            切换来自
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../switching_from/poetry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Poetry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../switching_from/conda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conda/Mamba
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../change_log/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    更新历史
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    IDE 集成
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            IDE 集成
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ide_integration/jupyterlab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JupyterLab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ide_integration/pycharm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PyCharm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ide_integration/r_studio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RStudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ide_integration/devcontainer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VSCode 开发容器
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    教程
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            教程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/ros2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ROS 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/rust/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    示例
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            示例
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/cpp-sdl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++/Cmake
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/opencv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenCV
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/ros2-nav2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ROS 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    功能
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            功能
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/environment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    环境
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/advanced_tasks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    任务
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/multi_platform_configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    多平台
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/multi_environment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    多环境
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/lockfile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lockfile
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/system_requirements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    系统要求
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/global_tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    全局工具
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    高级用法
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            高级用法
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    验证
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/explain_info_command/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    info 命令
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/channel_priority/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    通道逻辑
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/github_actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/updates_github_actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    使用 GitHub Actions 更新
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/production_deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    生产部署
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/pyproject_toml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pyproject.toml
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    参考
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            参考
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Project 配置
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Project 配置
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#project" class="md-nav__link">
+    <span class="md-ellipsis">
+      project 表格
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="project 表格">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name" class="md-nav__link">
+    <span class="md-ellipsis">
+      name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      channels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      platforms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    <span class="md-ellipsis">
+      version（可选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authors" class="md-nav__link">
+    <span class="md-ellipsis">
+      authors（可选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      description（可选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      license（可选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#license-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      license-file（可选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readme" class="md-nav__link">
+    <span class="md-ellipsis">
+      readme（可选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#homepage" class="md-nav__link">
+    <span class="md-ellipsis">
+      homepage（可选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      repository（可选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      documentation（可选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conda-pypi-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      conda-pypi-map（可选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      channel-priority（可选）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      tasks 表
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      system-requirements 表
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pypi-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      pypi-options 表
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="pypi-options 表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      替代注册表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      无构建隔离
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      索引策略
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      dependencies 表
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dependencies 表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      dependencies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pypi-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      pypi-dependencies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      host-dependencies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      build-dependencies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activation" class="md-nav__link">
+    <span class="md-ellipsis">
+      activation 表
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#target" class="md-nav__link">
+    <span class="md-ellipsis">
+      target 表
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      feature 和 environments 表
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="feature 和 environments 表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      feature 表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      environments 表
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      全局配置
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pixi_configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pixi 配置
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    其他
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            其他
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pixi 版本
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../packaging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    打包
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    社区
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#project" class="md-nav__link">
+    <span class="md-ellipsis">
+      project 表格
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="project 表格">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name" class="md-nav__link">
+    <span class="md-ellipsis">
+      name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      channels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      platforms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    <span class="md-ellipsis">
+      version（可选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authors" class="md-nav__link">
+    <span class="md-ellipsis">
+      authors（可选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      description（可选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      license（可选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#license-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      license-file（可选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readme" class="md-nav__link">
+    <span class="md-ellipsis">
+      readme（可选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#homepage" class="md-nav__link">
+    <span class="md-ellipsis">
+      homepage（可选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      repository（可选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      documentation（可选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conda-pypi-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      conda-pypi-map（可选）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      channel-priority（可选）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      tasks 表
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      system-requirements 表
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pypi-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      pypi-options 表
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="pypi-options 表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      替代注册表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      无构建隔离
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      索引策略
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      dependencies 表
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dependencies 表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependencies_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      dependencies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pypi-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      pypi-dependencies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      host-dependencies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      build-dependencies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activation" class="md-nav__link">
+    <span class="md-ellipsis">
+      activation 表
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#target" class="md-nav__link">
+    <span class="md-ellipsis">
+      target 表
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      feature 和 environments 表
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="feature 和 environments 表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      feature 表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      environments 表
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      全局配置
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/prefix-dev/pixi/edit/main/docs/reference/project_configuration.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>Project 配置</h1>
+
+<p><code>pixi.toml</code> 是 pixi 项目的配置文件，也称为项目清单文件。</p>
+<p><code>toml</code> 文件的结构由不同的表格组成。<br />
+本文将解释不同表格的用法。<br />
+有关更详细的技术文档，请查看 <a href="https://docs.rs/pixi/latest/pixi/project/manifest/struct.ProjectManifest.html">crates.io</a> 上的 pixi 文档。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>我们也支持 <code>pyproject.toml</code> 文件。它与 <code>pixi.toml</code> 文件具有相同的结构，唯一的不同是，你需要在表格名前加上 <code>tool.pixi</code>，而不是仅使用表格名称。例如，<code>[project]</code> 表格变为 <code>[tool.pixi.project]</code>。<br />
+在 <code>pyproject.toml</code> 文件中还有一些额外的功能，详细信息请参阅 <a href="../../advanced/pyproject_toml/">pyproject.toml</a> 文档。</p>
+</div>
+<h2 id="project"><code>project</code> 表格<a class="headerlink" href="#project" title="Permanent link">#</a></h2>
+<p>在 <code>project</code> 表格中，最基本的必需信息是：</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[project]</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">channels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;conda-forge&quot;</span><span class="p">]</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;project-name&quot;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">platforms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;linux-64&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<h3 id="name"><code>name</code><a class="headerlink" href="#name" title="Permanent link">#</a></h3>
+<p>项目的名称。</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;project-name&quot;</span>
+</span></code></pre></div>
+<h3 id="channels"><code>channels</code><a class="headerlink" href="#channels" title="Permanent link">#</a></h3>
+<p>这是一个定义用来获取包的渠道的列表。<br />
+如果你想使用托管在 <code>anaconda.org</code> 上的渠道，只需要直接使用该渠道的名称。</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">channels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;conda-forge&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;robostack&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;bioconda&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;nvidia&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pytorch&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<p>文件系统上的渠道也可以使用 <strong>绝对路径</strong> 来支持：</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">channels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;conda-forge&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;file:///home/user/staged-recipes/build_artifacts&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<p>要访问 <a href="https://prefix.dev/channels">prefix.dev</a> 或 <a href="https://github.com/mamba-org/quetz">Quetz</a> 上的私有或公共渠道，可以使用包括主机名的 URL：</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">channels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;conda-forge&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://repo.prefix.dev/channel-name&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<h3 id="platforms"><code>platforms</code><a class="headerlink" href="#platforms" title="Permanent link">#</a></h3>
+<p>定义项目支持的平台列表。<br />
+Pixi 会为所有这些平台解决依赖关系，并将其放入锁文件 (<code>pixi.lock</code>) 中。</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">platforms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;win-64&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;linux-64&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;osx-64&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;osx-arm64&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<p>可用的平台列表请参见此处：<a href="https://docs.rs/rattler_conda_types/latest/rattler_conda_types/enum.Platform.html">链接</a></p>
+<div class="admonition tip">
+<p class="admonition-title">macOS 特殊行为</p>
+<p>macOS 有两个平台：<code>osx-64</code> 用于 Intel Mac 和 <code>osx-arm64</code> 用于 Apple Silicon Mac。<br />
+要同时支持两者，请将两者都包括在你的平台列表中。<br />
+回退：如果 <code>osx-arm64</code> 无法解析，使用 <code>osx-64</code>。<br />
+在 Apple Silicon 上运行 <code>osx-64</code> 时，会使用 <a href="https://developer.apple.com/documentation/apple-silicon/about-the-rosetta-translation-environment">Rosetta</a> 来运行 Intel 二进制文件。</p>
+</div>
+<h3 id="version"><code>version</code>（可选）<a class="headerlink" href="#version" title="Permanent link">#</a></h3>
+<p>项目的版本。<br />
+该版本应为基于 conda 版本规范的有效版本。<br />
+有关版本规范允许的内容，请参阅 <a href="https://docs.rs/rattler_conda_types/latest/rattler_conda_types/struct.Version.html">版本文档</a>。</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;1.2.3&quot;</span>
+</span></code></pre></div>
+<h3 id="authors"><code>authors</code>（可选）<a class="headerlink" href="#authors" title="Permanent link">#</a></h3>
+<p>这是一个列出项目作者的列表。</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;John Doe &lt;j.doe@prefix.dev&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Marie Curie &lt;mss1867@gmail.com&gt;&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<h3 id="description"><code>description</code>（可选）<a class="headerlink" href="#description" title="Permanent link">#</a></h3>
+<p>应包含项目的简短描述。</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;A simple description&quot;</span>
+</span></code></pre></div>
+<h3 id="license"><code>license</code>（可选）<a class="headerlink" href="#license" title="Permanent link">#</a></h3>
+<p>项目的许可证，作为有效的 <a href="https://spdx.org/licenses/">SPDX</a> 字符串（例如 MIT AND Apache-2.0）</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;MIT&quot;</span>
+</span></code></pre></div>
+<h3 id="license-file"><code>license-file</code>（可选）<a class="headerlink" href="#license-file" title="Permanent link">#</a></h3>
+<p>许可证文件的相对路径。</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">license-file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;LICENSE.md&quot;</span>
+</span></code></pre></div>
+<h3 id="readme"><code>readme</code>（可选）<a class="headerlink" href="#readme" title="Permanent link">#</a></h3>
+<p>README 文件的相对路径。</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
+</span></code></pre></div>
+<h3 id="homepage"><code>homepage</code>（可选）<a class="headerlink" href="#homepage" title="Permanent link">#</a></h3>
+<p>项目主页的 URL。</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">homepage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://pixi.sh&quot;</span>
+</span></code></pre></div>
+<h3 id="repository"><code>repository</code>（可选）<a class="headerlink" href="#repository" title="Permanent link">#</a></h3>
+<p>项目源代码仓库的 URL。</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">repository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/prefix-dev/pixi&quot;</span>
+</span></code></pre></div>
+<h3 id="documentation"><code>documentation</code>（可选）<a class="headerlink" href="#documentation" title="Permanent link">#</a></h3>
+<p>项目文档的 URL。</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">documentation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://pixi.sh&quot;</span>
+</span></code></pre></div>
+<h3 id="conda-pypi-map"><code>conda-pypi-map</code>（可选）<a class="headerlink" href="#conda-pypi-map" title="Permanent link">#</a></h3>
+<p>将频道名称或 URL 映射到可以是 URL 或路径的映射位置。<br />
+映射应采用 <code>json</code> 格式，格式为 <code>{conda_name}: {pypi_package_name}</code>。<br />
+示例如下：</p>
+<div class="language-json highlight"><span class="filename">local/robostack_mapping.json</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">&quot;jupyter-ros&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my-name-from-mapping&quot;</span><span class="p">,</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span><span class="nt">&quot;boltons&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;boltons-pypi&quot;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>如果 <code>conda-forge</code> 不在 <code>conda-pypi-map</code> 中，<code>pixi</code> 将使用 <code>prefix.dev</code> 的映射。</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">conda-pypi-map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;conda-forge&quot;</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;https://example.com/mapping&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://repo.prefix.dev/robostack&quot;</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;local/robostack_mapping.json&quot;</span><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="channel-priority"><code>channel-priority</code>（可选）<a class="headerlink" href="#channel-priority" title="Permanent link">#</a></h3>
+<p>这是设置求解步骤中频道优先级的选项。</p>
+<p>选项：</p>
+<ul>
+<li>
+<p><code>strict</code>：<strong>默认</strong>，频道将按 <code>channels</code> 列表中定义的顺序使用。<br />
+   只有第一个包含该包的频道中的包会被使用。<br />
+   这确保了不会混合来自不同频道的同一包的不同变体。<br />
+   使用来自不同不兼容频道（如 <code>conda-forge</code> 和 <code>main</code>）的包可能会导致难以调试的 ABI 不兼容问题。</p>
+<p>我们强烈建议不要更改默认设置。</p>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>disabled</code>：没有优先级，所有频道的包变体将按包名设置并作为一个解决方案。<br />
+   使用此选项时应小心。<br />
+   由于包变体可以来自 <em>任何</em> 渠道，因此使用此模式时，包可能不兼容。<br />
+   这可能导致难以调试的 ABI 不兼容问题。</p>
+<p>我们强烈不建议使用此选项。</p>
+</li>
+</ul>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">channel-priority</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;disabled&quot;</span>
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title"><code>channel-priority = "disabled"</code> 是一个安全风险</p>
+<p>禁用频道优先级可能会导致不可预测的依赖关系解析结果。<br />
+这可能是一个安全风险，因为它可能导致从意外的频道安装包。<br />
+建议保持默认的严格设置，并谨慎排序频道。<br />
+如有必要，直接为依赖项指定一个频道。<br />
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">[project]</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="c1"># 将 conda-forge 放在首位解决大多数问题</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="n">channels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;conda-forge&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;channel-name&quot;</span><span class="p">]</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="k">[dependencies]</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="n">package</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">version</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">channel</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;channel-name&quot;</span><span class="p">}</span>
+</span></code></pre></div></p>
+</div>
+<h2 id="tasks"><code>tasks</code> 表<a class="headerlink" href="#tasks" title="Permanent link">#</a></h2>
+<p>任务是一种在项目中自动化某些自定义命令的方式。<br />
+例如，一个 <code>lint</code> 或 <code>format</code> 步骤。<br />
+Pixi 项目中的任务本质上是跨平台的 shell 命令，在不同平台上有统一的语法。<br />
+有关更深入的信息，请查看 <a href="../../features/advanced_tasks/">高级任务文档</a>。<br />
+Pixi 的任务在 pixi 环境中使用 <code>pixi run</code> 运行，并通过 <a href="../../features/advanced_tasks/#deno_task_shell"><code>deno_task_shell</code></a> 执行。</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">[tasks]</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">simple</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;echo This is a simple task&quot;</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cmd</span><span class="p">=</span><span class="s2">&quot;echo Same as a simple task but now more verbose&quot;</span><span class="p">}</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="n">depending</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cmd</span><span class="p">=</span><span class="s2">&quot;echo run after simple&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">depends-on</span><span class="p">=</span><span class="s2">&quot;simple&quot;</span><span class="p">}</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="n">alias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">depends-on</span><span class="p">=[</span><span class="s2">&quot;depending&quot;</span><span class="p">]}</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="n">download</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cmd</span><span class="p">=</span><span class="s2">&quot;curl -o file.txt https://example.com/file.txt&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">outputs</span><span class="p">=[</span><span class="s2">&quot;file.txt&quot;</span><span class="p">]}</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="n">build</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cmd</span><span class="p">=</span><span class="s2">&quot;npm build&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cwd</span><span class="p">=</span><span class="s2">&quot;frontend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">inputs</span><span class="p">=[</span><span class="s2">&quot;frontend/package.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;frontend/*.js&quot;</span><span class="p">]}</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cmd</span><span class="p">=</span><span class="s2">&quot;python run.py $ARGUMENT&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">env</span><span class="p">={</span><span class="w"> </span><span class="n">ARGUMENT</span><span class="p">=</span><span class="s2">&quot;value&quot;</span><span class="w"> </span><span class="p">}}</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="n">format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cmd</span><span class="p">=</span><span class="s2">&quot;black $INIT_CWD&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1"># 在运行 pixi run format 时执行 black</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="n">clean-env</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;python isolated.py&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">clean-env</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="p">}</span><span class="w"> </span><span class="c1"># 仅限 Unix！</span>
+</span></code></pre></div>
+<p>您可以使用 <a href="../cli/#task"><code>pixi task</code></a> 修改此表。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>使用 <a href="#target">target</a> 表为不同平台指定不同的任务</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>如果您希望隐藏某个任务，使其不出现在 <code>pixi task list</code> 或 <code>pixi info</code> 中，您可以在任务名称前加上 <code>_</code>。<br />
+例如，如果您想隐藏 <code>depending</code>，可以将其重命名为 <code>_depending</code>。</p>
+</div>
+<h2 id="system-requirements"><code>system-requirements</code> 表<a class="headerlink" href="#system-requirements" title="Permanent link">#</a></h2>
+<p>系统要求用于定义在依赖解析过程中使用的最低系统规格。</p>
+<p>例如，我们可以定义一个具有特定最低 libc 版本的 Unix 系统。
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">[system-requirements]</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="n">libc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;2.28&quot;</span>
+</span></code></pre></div>
+或使项目依赖于特定版本的 <code>cuda</code>：
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">[system-requirements]</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="n">cuda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;12&quot;</span>
+</span></code></pre></div></p>
+<p>可以定义的选项有：</p>
+<ul>
+<li><code>linux</code>：最低版本的 Linux 内核。</li>
+<li><code>libc</code>：最低版本的 libc 库。还允许指定 libc 库的家族。<br />
+  例如：<code>libc = { family="glibc", version="2.28" }</code></li>
+<li><code>macos</code>：最低版本的 macOS 操作系统。</li>
+<li><code>cuda</code>：最低版本的 CUDA 库。</li>
+</ul>
+<p>有关更多信息，请参阅 <a href="../../features/system_requirements/">系统要求文档</a>。</p>
+<h2 id="pypi-options"><code>pypi-options</code> 表<a class="headerlink" href="#pypi-options" title="Permanent link">#</a></h2>
+<p><code>pypi-options</code> 表用于定义特定于 PyPI 注册表的选项。<br />
+这些选项可以在根级别指定，这将添加到默认选项中，或者在功能级别指定，当功能被包含到环境中时，会创建这些选项的联合。</p>
+<p>可以定义的选项有：</p>
+<ul>
+<li><code>index-url</code>：替换主索引 URL。</li>
+<li><code>extra-index-urls</code>：添加额外的索引 URL。</li>
+<li><code>find-links</code>：类似于 <code>pip</code> 中的 <code>--find-links</code> 选项。</li>
+<li><code>no-build-isolation</code>：禁用构建隔离，仅能针对每个包设置。</li>
+<li><code>index-strategy</code>：允许指定使用的索引策略。</li>
+</ul>
+<p>这些选项在下面的章节中有详细说明。大部分选项直接来自或略有修改自 <a href="https://docs.astral.sh/uv/reference/settings/">uv 设置</a>。如果您需要的选项没有列出，请随时创建问题 <a href="https://github.com/prefix-dev/pixi/issues">请求</a>。</p>
+<h3 id="_1">替代注册表<a class="headerlink" href="#_1" title="Permanent link">#</a></h3>
+<div class="admonition info">
+<p class="admonition-title">严格的索引优先级</p>
+<p>与 pip 不同，由于我们使用 uv，我们具有严格的索引优先级。这意味着将使用第一个可以找到包的索引。<br />
+索引的顺序由 toml 文件中的定义顺序决定。<code>extra-index-urls</code> 优先于 <code>index-url</code>。更多信息请参阅 <a href="https://docs.astral.sh/uv/pip/compatibility/#packages-that-exist-on-multiple-indexes">uv 文档</a></p>
+</div>
+<p>通常，您可能希望为项目使用替代或额外的索引。这可以通过将 <code>pypi-options</code> 表添加到 <code>pixi.toml</code> 文件中来完成，以下选项是可用的：</p>
+<ul>
+<li><code>index-url</code>：替换主索引 URL。如果未设置，默认索引为 <code>https://pypi.org/simple</code>。<br />
+   每个环境只能定义 <strong>一个</strong> <code>index-url</code>。</li>
+<li><code>extra-index-urls</code>：添加额外的索引 URL。索引 URL 按定义顺序使用，并且优先于 <code>index-url</code>。这些 URL 会在功能间合并到环境中。</li>
+<li><code>find-links</code>：可以是路径 <code>{path = './links'}</code> 或 URL <code>{url = 'https://example.com/links'}</code>。<br />
+   这类似于 <code>pip</code> 中的 <code>--find-links</code> 选项。这些 URL 会在功能间合并到环境中。</li>
+</ul>
+<p>示例：</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">[pypi-options]</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="n">index-url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://pypi.org/simple&quot;</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="n">extra-index-urls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;https://example.com/simple&quot;</span><span class="p">]</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="n">find-links</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="n">path</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s1">&#39;./links&#39;</span><span class="p">}]</span>
+</span></code></pre></div>
+<p>Pixi 仓库中有一些 <a href="https://github.com/prefix-dev/pixi/tree/main/examples/pypi-custom-registry">示例</a>，展示了如何使用此功能。</p>
+<div class="admonition tip">
+<p class="admonition-title">认证方法</p>
+<p>要了解有关私有注册表的现有认证方法，请查看 <a href="../../advanced/authentication/#pypi">PyPI 认证</a> 部分。</p>
+</div>
+<h3 id="_2">无构建隔离<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
+<p>尽管构建隔离是一个很好的默认设置，<br />
+但可以选择<strong>不</strong>对某个包名称进行隔离，这允许构建访问 <code>pixi</code> 环境。<br />
+如果您希望在构建过程中使用 <code>torch</code> 或类似的库，这将非常方便。</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">[dependencies]</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="n">pytorch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;2.4.0&quot;</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="k">[pypi-options]</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="n">no-build-isolation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;detectron2&quot;</span><span class="p">]</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="k">[pypi-dependencies]</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="n">detectron2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/facebookresearch/detectron2.git&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rev</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;5b72c27ae39f99db75d43f18fd1312e1ea934e60&quot;</span><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Conda 依赖定义构建环境</p>
+<p>要有效使用 <code>no-build-isolation</code>，请使用 conda 依赖来定义构建环境。这些依赖会在解析 PyPI 依赖之前安装，这样它们在构建过程中就可以使用。在上面的示例中，将 <code>torch</code> 作为 PyPI 依赖添加将不起作用，因为它在 PyPI 解析阶段尚未安装。</p>
+</div>
+<h3 id="_3">索引策略<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
+<p>用于解析多个索引 URL 时的策略。描述修改自 <a href="https://docs.astral.sh/uv/reference/settings/#index-strategy">uv</a> 文档：</p>
+<p>默认情况下，<code>uv</code> 以及 <code>pixi</code> 会在找到给定包的第一个索引时停止，并将解析限制在该第一个索引中存在的包（即首个匹配）。<br />
+这可以防止 <em>依赖混淆</em> 攻击，在这种攻击中，攻击者可能会将恶意包上传到一个次级索引，并使用相同的名称。</p>
+<div class="admonition warning">
+<p class="admonition-title">每个环境只能有一个索引策略</p>
+<p>每个环境或求解组只能定义一个 <code>index-strategy</code>，否则会显示错误。</p>
+</div>
+<h4 id="_4">可选值：<a class="headerlink" href="#_4" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>"first-index"</strong>：仅使用返回匹配给定包名的第一个索引的结果</li>
+<li><strong>"unsafe-first-match"</strong>：在所有索引中搜索每个包名，先在第一个索引中消耗完版本，再转到下一个索引。这意味着如果包 <code>a</code> 在索引 <code>x</code> 和 <code>y</code> 中都有，除非您请求的包版本<strong>仅</strong>在 <code>y</code> 上可用，否则会优先选择 <code>x</code> 中的版本。</li>
+<li><strong>"unsafe-best-match"</strong>：在所有索引中搜索每个包名，优先选择找到的<em>最佳</em>版本。如果包版本在多个索引中都有，最多只查看第一个索引中的条目。所以，对于包含包 <code>a</code> 的索引 <code>x</code> 和 <code>y</code>，它会从 <code>x</code> 或 <code>y</code> 中选择<em>最佳</em>版本，但如果该版本在两个索引中都有，它会优先选择 <code>x</code>。</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">仅限 PyPI</p>
+<p><code>index-strategy</code> 只会影响 PyPI 包的解析，不会影响 conda 包的解析。</p>
+</div>
+<h2 id="dependencies"><code>dependencies</code> 表<a class="headerlink" href="#dependencies" title="Permanent link">#</a></h2>
+<p>此部分定义您希望为项目使用的依赖。</p>
+<p>有多个依赖表。<br />
+默认的是 <code>[dependencies]</code>，它是跨平台共享的依赖。</p>
+<p>依赖项使用 <a href="https://docs.rs/rattler_conda_types/latest/rattler_conda_types/version_spec/enum.VersionSpec.html">VersionSpec</a> 定义。<br />
+<code>VersionSpec</code> 将 <a href="https://docs.rs/rattler_conda_types/latest/rattler_conda_types/struct.Version.html">Version</a> 与可选的操作符结合。</p>
+<p>一些示例如下：</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># 使用此确切包版本</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="n">package0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;1.2.3&quot;</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="c1"># 使用 1.2.3 到 1.3.0 的版本</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="n">package1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;~=1.2.3&quot;</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="c1"># 使用大于 1.2 且小于等于 1.4 的版本</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="n">package2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;1.2,&lt;=1.4&quot;</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="c1"># 大于等于 1.2.3 或小于 1.0.0 的版本</span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="n">package3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=1.2.3|&lt;1.0.0&quot;</span>
+</span></code></pre></div>
+<p>依赖项也可以作为映射进行定义，使用 <a href="https://docs.rs/rattler_conda_types/latest/rattler_conda_types/struct.NamelessMatchSpec.html">matchspec</a>：</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">package0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;&gt;=1.2.3&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">channel</span><span class="p">=</span><span class="s2">&quot;conda-forge&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="n">package1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;&gt;=1.2.3&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">build</span><span class="p">=</span><span class="s2">&quot;py34_0&quot;</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>可以使用 <code>pixi add</code> 命令轻松添加依赖项。<br />
+对现有依赖运行 <code>add</code> 命令将其替换为可用的最新版本。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>要为不同平台指定不同的依赖项，请使用 <a href="#target">target</a> 表。</p>
+</div>
+<h3 id="dependencies_1"><code>dependencies</code><a class="headerlink" href="#dependencies_1" title="Permanent link">#</a></h3>
+<p>添加您希望安装到环境中的任何 conda 包依赖项。<br />
+如果使用的不是 <code>conda-forge</code>，请不要忘记将该通道添加到项目表中。<br />
+即使依赖项定义了通道，也应将该通道添加到 <code>project.channels</code> 列表中。</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">[dependencies]</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="n">python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;3.9,&lt;=3.11&quot;</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="n">rust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;1.72&quot;</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="n">pytorch-cpu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;~=1.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">channel</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;pytorch&quot;</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="pypi-dependencies"><code>pypi-dependencies</code><a class="headerlink" href="#pypi-dependencies" title="Permanent link">#</a></h3>
+<details class="info">
+<summary>有关 PyPI 集成的详细信息</summary>
+<p>我们使用 <a href="https://github.com/astral-sh/uv"><code>uv</code></a>，这是一个用 Rust 编写的新型快速 pip 替代品。</p>
+<p>我们将 uv 作为库集成，因此我们使用 uv 解析器，并将 conda 包作为“锁定”传递给它。<br />
+这禁止 uv 自行安装这些依赖，并确保它在解析时使用这些包的确切版本。<br />
+这在基于 conda 的包管理器中是独特的，因为通常它们只是从子进程调用 pip。</p>
+<p>uv 解析直接包含在锁文件中。</p>
+</details>
+<p>Pixi 直接支持依赖 PyPI 包，PyPA 将分发包称为“分发”。<br />
+Pixi 支持 <a href="https://packaging.python.org/en/latest/specifications/source-distribution-format/">源</a> 和 <a href="https://packaging.python.org/en/latest/specifications/binary-distribution-format/">二进制</a> 分发，<br />
+这些都可以在 Pixi 中使用。<br />
+这些分发包在 conda 环境解析并安装后安装到环境中。<br />
+PyPI 包没有在 <a href="https://prefix.dev/channels">prefix.dev</a> 上索引，但可以在 <a href="https://pypi.org/">pypi.org</a> 查看。</p>
+<div class="admonition warning">
+<p class="admonition-title">重要事项</p>
+<ul>
+<li><strong>稳定性</strong>：PyPI 包可能不如 conda 包稳定。在可能的情况下，优先使用 <code>dependencies</code> 表中的 conda 包。</li>
+</ul>
+</div>
+<h4 id="_5">版本规范：<a class="headerlink" href="#_5" title="Permanent link">#</a></h4>
+<p>这些依赖项不遵循 conda 的 matchspec 规范。<br />
+<code>version</code> 是根据 <a href="https://packaging.python.org/en/latest/specifications/version-specifiers/">PEP404/PyPA</a> 定义的版本字符串规范。<br />
+此外，可以包含一个额外的列表，这些是可选的依赖项。<br />
+请注意，这里的 <code>version</code> 与 conda 的 MatchSpec 类型不同。<br />
+请参见以下示例，了解如何在实践中使用：</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">[dependencies]</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="c1"># 使用 pypi-dependencies 时，需要 python 来解析 pypi 依赖</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="c1"># 请确保包含此项</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="n">python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.6&quot;</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="k">[pypi-dependencies]</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="n">fastapi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="w">  </span><span class="c1"># 这表示任何版本（通配符 `*` 是 pixi 的扩展，而不是规范的一部分）</span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="n">pre-commit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;~=3.5.0&quot;</span><span class="w"> </span><span class="c1"># 这是一个单一版本的规范</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="c1"># 使用 toml 映射可以让用户添加 `extras`</span>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="n">pandas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;&gt;=1.0.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">extras</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;dataframe&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;sql&quot;</span><span class="p">]}</span>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a>
+</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="c1"># git 依赖</span>
+</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="c1"># 使用 ssh</span>
+</span><span id="__span-27-14"><a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="n">flask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;ssh://git@github.com/pallets/flask&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-27-15"><a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="c1"># 使用 https 和特定的修订版</span>
+</span><span id="__span-27-16"><a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a><span class="n">requests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/psf/requests.git&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rev</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;0106aced5faa299e6ede89d1230bd6784f2c3660&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-27-17"><a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a><span class="c1"># TODO: 后续会支持 -&gt; branch = &#39;&#39; 或 tag = &#39;&#39; 用于指定分支或标签</span>
+</span><span id="__span-27-18"><a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a>
+</span><span id="__span-27-19"><a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a><span class="c1"># 也可以直接从路径添加源依赖，建议将路径保持为相对于项目根目录的路径</span>
+</span><span id="__span-27-20"><a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a><span class="n">minimal-project</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;./minimal-project&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">editable</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="p">}</span>
+</span><span id="__span-27-21"><a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a>
+</span><span id="__span-27-22"><a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a><span class="c1"># 还可以使用直接的 url，指向 `.tar.gz` 或 `.zip` 文件，或 `.whl` 文件</span>
+</span><span id="__span-27-23"><a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a><span class="n">click</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pallets/click/releases/download/8.1.7/click-8.1.7-py3-none-any.whl&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-27-24"><a id="__codelineno-27-24" name="__codelineno-27-24" href="#__codelineno-27-24"></a>
+</span><span id="__span-27-25"><a id="__codelineno-27-25" name="__codelineno-27-25" href="#__codelineno-27-25"></a><span class="c1"># 还可以直接使用默认的 git 仓库，它将检出默认分支</span>
+</span><span id="__span-27-26"><a id="__codelineno-27-26" name="__codelineno-27-26" href="#__codelineno-27-26"></a><span class="n">pytest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pytest-dev/pytest.git&quot;</span><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="_6">完整规范<a class="headerlink" href="#_6" title="Permanent link">#</a></h4>
+<p>Pixi 支持的 PyPI 依赖的完整规范可以分为以下几个字段：</p>
+<h5 id="extras"><code>extras</code><a class="headerlink" href="#extras" title="Permanent link">#</a></h5>
+<p>要与包一起安装的额外依赖列表，例如 <code>["dataframe", "sql"]</code>。<br />
+<code>extras</code> 字段与所有其他版本规范兼容，因为它是版本规范的附加部分。</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">pandas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;&gt;=1.0.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">extras</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;dataframe&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;sql&quot;</span><span class="p">]}</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="n">pytest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;URL&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">extras</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;dev&quot;</span><span class="p">]}</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="n">black</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;URL&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">extras</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;cli&quot;</span><span class="p">]}</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="n">minimal-project</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;./minimal-project&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">editable</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="n">extras</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;dev&quot;</span><span class="p">]}</span>
+</span></code></pre></div>
+<h5 id="version_1"><code>version</code><a class="headerlink" href="#version_1" title="Permanent link">#</a></h5>
+<p>要安装的包的版本，例如 <code>"&gt;=1.0.0"</code> 或 <code>*</code>，代表任何版本，这是 Pixi 特有的。<br />
+<code>version</code> 是我们的默认字段，因此如果没有使用内联表（<code>{}</code>），将默认使用此字段。</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">py-rattler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;*&quot;</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="n">ruff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;~=1.0.0&quot;</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="n">pytest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">version</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">extras</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;dev&quot;</span><span class="p">]}</span>
+</span></code></pre></div>
+<h5 id="git"><code>git</code><a class="headerlink" href="#git" title="Permanent link">#</a></h5>
+<p>从 git 仓库安装。<br />
+支持 <code>https://</code> 和 <code>ssh://</code> 两种 URL。</p>
+<p>使用 <code>git</code> 时可以结合 <code>rev</code> 或 <code>subdirectory</code>：</p>
+<ul>
+<li><code>rev</code>：指定要安装的修订版，例如 <code>rev = "0106aced5faa299e6ede89d1230bd6784f2c3660"</code></li>
+<li><code>subdirectory</code>：指定要安装的子目录，例如 <code>subdirectory = "src"</code> 或 <code>subdirectory = "src/packagex"</code></li>
+</ul>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="c1"># 注意不要忘记 `ssh://` 或 `https://` 前缀！</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="n">pytest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pytest-dev/pytest.git&quot;</span><span class="p">}</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="n">requests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/psf/requests.git&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rev</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;0106aced5faa299e6ede89d1230bd6784f2c3660&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="n">py-rattler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;ssh://git@github.com/mamba-org/rattler.git&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">subdirectory</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;py-rattler&quot;</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+<h5 id="path"><code>path</code><a class="headerlink" href="#path" title="Permanent link">#</a></h5>
+<p>从本地路径安装，例如 <code>path = "./path/to/package"</code>。<br />
+我们建议将路径项目保存在项目内部，并使用相对路径。</p>
+<p>将 <code>editable</code> 设置为 <code>true</code> 以启用可编辑模式安装，强烈建议使用此模式，因为如果不使用可编辑模式，重新安装将变得困难。例如，<code>editable = true</code></p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">minimal-project</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;./minimal-project&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">editable</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="p">}</span>
+</span></code></pre></div>
+<h5 id="url"><code>url</code><a class="headerlink" href="#url" title="Permanent link">#</a></h5>
+<p>从 URL 直接安装 wheel 或 sdist 文件。</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">pandas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;https://files.pythonhosted.org/packages/3d/59/2afa81b9fb300c90531803c0fd43ff4548074fa3e8d0f747ef63b3b5e77a/pandas-2.2.1.tar.gz&quot;</span><span class="p">}</span>
+</span></code></pre></div>
+<details class="tip">
+<summary>你知道可以使用：<code>add --pypi</code> 吗？</summary>
+<p>使用 <code>add</code> 命令时加上 <code>--pypi</code> 标志，可以快速从 CLI 添加 PyPI 包。<br />
+例如 <code>pixi add --pypi flask</code>  </p>
+<p><em>这还不支持 <code>pypi-dependencies</code> 表的所有功能。</em></p>
+</details>
+<h4 id="sdist">源依赖（<code>sdist</code>）<a class="headerlink" href="#sdist" title="Permanent link">#</a></h4>
+<p><a href="https://packaging.python.org/en/latest/specifications/source-distribution-format/">源分发格式</a> 是一种基于源代码的格式（简称 sdist），包可以与二进制 wheel 格式一起包含。<br />
+因为这些分发包需要构建，所以需要一个 Python 可执行文件来完成此操作。<br />
+这就是为什么在 conda 环境中需要存在 python。<br />
+源分发通常依赖于系统包来构建，特别是在编译 C/C++ 基于 Python 的绑定时。<br />
+例如，Python SDL2 绑定依赖 C 库 SDL2。<br />
+为了帮助构建这些依赖项，我们会在解析之前激活包含这些 PyPI 依赖项的 conda 环境。<br />
+这样，当源分发依赖于例如 <code>gcc</code> 时，它将使用来自 conda 环境中的版本，而不是系统版本。</p>
+<h3 id="host-dependencies"><code>host-dependencies</code><a class="headerlink" href="#host-dependencies" title="Permanent link">#</a></h3>
+<p>此表包含构建项目所需的依赖项，但这些依赖项在项目作为其他项目的一部分安装时不应被包含。<br />
+换句话说，这些依赖项在构建过程中可用，但在项目安装后将不再可用。<br />
+列在此表中的依赖项将根据目标机器的架构进行安装。</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="k">[host-dependencies]</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="n">python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;~=3.10.3&quot;</span>
+</span></code></pre></div>
+<p>主机依赖项的典型示例如下：</p>
+<ul>
+<li>基础解释器：Python 包会在此列出 <code>python</code>，R 包会列出 <code>mro-base</code> 或 <code>r-base</code>。</li>
+<li>在编译过程中链接的库，例如 <code>openssl</code>、<code>rapidjson</code> 或 <code>xtensor</code>。</li>
+</ul>
+<h3 id="build-dependencies"><code>build-dependencies</code><a class="headerlink" href="#build-dependencies" title="Permanent link">#</a></h3>
+<p>此表包含构建项目所需的依赖项。
+与 <code>dependencies</code> 和 <code>host-dependencies</code> 不同，这些包是针对 <em>构建</em> 机器架构安装的。
+这使得可以从一个机器架构交叉编译到另一个机器架构。</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="k">[build-dependencies]</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="n">cmake</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;~=3.24&quot;</span>
+</span></code></pre></div>
+<p>构建依赖项的典型示例包括：</p>
+<ul>
+<li>编译器在构建机器上调用，但它们为目标机器生成代码。
+  如果项目是交叉编译的，构建机器和目标机器的架构可能不同。</li>
+<li>在构建机器上调用 <code>cmake</code> 以生成附加的代码或项目文件，这些文件随后会被包含在编译过程中。</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><em>构建</em> 目标指的是执行构建的机器。
+这些依赖项安装的程序和库将在构建机器上执行。</p>
+<p>例如，如果你在带有 Apple Silicon 芯片的 MacBook 上编译，但目标平台是 Linux x86_64，那么你的 <em>build</em> 平台是 <code>osx-arm64</code>，而你的 <em>host</em> 平台是 <code>linux-64</code>。</p>
+</div>
+<h2 id="activation"><code>activation</code> 表<a class="headerlink" href="#activation" title="Permanent link">#</a></h2>
+<p><code>activation</code> 表用于在激活环境时执行的专门激活操作。</p>
+<p>用户可以修改以下两种类型的激活操作：</p>
+<ul>
+<li><code>scripts</code>：激活环境时运行的脚本列表。</li>
+<li><code>env</code>：激活环境时设置的环境变量映射。</li>
+</ul>
+<p>这些激活操作将在 <code>pixi run</code> 和 <code>pixi shell</code> 命令之前执行。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>激活操作由系统的 shell 解释器运行，因为它们在环境可用之前运行。
+这意味着它们会在 Windows 上作为 <code>cmd.exe</code> 运行，在 Linux 和 osx（Unix）上作为 <code>bash</code> 运行。
+仅支持 <code>.sh</code>、<code>.bash</code> 和 <code>.bat</code> 文件。</p>
+<p>环境变量将在运行激活脚本的 shell 中设置，因此在使用例如 <code>$</code> 或 <code>%</code> 时需要注意。</p>
+<p>如果你有特定平台的脚本或环境变量，请使用 <a href="#target">target</a> 表。</p>
+</div>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="k">[activation]</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="n">scripts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;env_setup.sh&quot;</span><span class="p">]</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="n">env</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">ENV_VAR</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="c1"># 若要同时支持 Windows 平台，请添加以下内容</span>
+</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="k">[target.win-64.activation]</span>
+</span><span id="__span-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="n">scripts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;env_setup.bat&quot;</span><span class="p">]</span>
+</span><span id="__span-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a>
+</span><span id="__span-35-9"><a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a><span class="k">[target.linux-64.activation.env]</span>
+</span><span id="__span-35-10"><a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a><span class="n">ENV_VAR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;linux-value&quot;</span>
+</span><span id="__span-35-11"><a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a>
+</span><span id="__span-35-12"><a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a><span class="c1"># 你还可以引用现有的环境变量，但这必须</span>
+</span><span id="__span-35-13"><a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a><span class="c1"># 分别针对类 Unix 操作系统和 Windows 执行</span>
+</span><span id="__span-35-14"><a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a><span class="k">[target.unix.activation.env]</span>
+</span><span id="__span-35-15"><a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a><span class="n">ENV_VAR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;$OTHER_ENV_VAR/unix-value&quot;</span>
+</span><span id="__span-35-16"><a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a>
+</span><span id="__span-35-17"><a id="__codelineno-35-17" name="__codelineno-35-17" href="#__codelineno-35-17"></a><span class="k">[target.win.activation.env]</span>
+</span><span id="__span-35-18"><a id="__codelineno-35-18" name="__codelineno-35-18" href="#__codelineno-35-18"></a><span class="n">ENV_VAR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;%OTHER_ENV_VAR%</span><span class="se">\\</span><span class="s2">windows-value&quot;</span>
+</span></code></pre></div>
+<h2 id="target"><code>target</code> 表<a class="headerlink" href="#target" title="Permanent link">#</a></h2>
+<p><code>target</code> 表是一个允许进行平台特定配置的表。
+它使你能够为每个平台设置不同的任务或依赖项。</p>
+<p><code>target</code> 表目前已经实现了以下子表：</p>
+<ul>
+<li><a href="#activation"><code>activation</code></a></li>
+<li><a href="#dependencies"><code>dependencies</code></a></li>
+<li><a href="#tasks"><code>tasks</code></a></li>
+</ul>
+<p><code>target</code> 表是使用 <code>[target.PLATFORM.SUB-TABLE]</code> 定义的。
+例如，<code>[target.linux-64.dependencies]</code></p>
+<p>平台可以是以下之一：</p>
+<ul>
+<li><code>win</code>、<code>osx</code>、<code>linux</code> 或 <code>unix</code>（<code>unix</code> 匹配 <code>linux</code> 和 <code>osx</code>）</li>
+<li>或任何更具体的 <a href="#platforms">目标平台</a>，例如 <code>linux-64</code>、<code>osx-arm64</code></li>
+</ul>
+<p>子表可以是上述任意之一。</p>
+<p>为了更清楚，下面是一个例子。
+目前，pixi 将顶级表（如 <code>dependencies</code>）与特定于目标的平台表合并为一个集合。
+在依赖项的情况下，它们可以同时添加或覆盖依赖项。
+在下面的例子中，我们使用 <code>cmake</code> 为所有目标，但在 <code>osx-64</code> 或 <code>osx-arm64</code> 上将选择不同版本的 Python。</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="k">[dependencies]</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="n">cmake</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;3.26.4&quot;</span>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="n">python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;3.10&quot;</span>
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>
+</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="k">[target.osx.dependencies]</span>
+</span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a><span class="n">python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;3.11&quot;</span>
+</span></code></pre></div>
+<p>以下是更多的示例：</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="k">[target.win-64.activation]</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="n">scripts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;setup.bat&quot;</span><span class="p">]</span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="k">[target.win-64.dependencies]</span>
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="n">msmpi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;~=10.1.1&quot;</span>
+</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>
+</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="k">[target.win-64.build-dependencies]</span>
+</span><span id="__span-37-8"><a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="n">vs2022_win-64</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;19.36.32532&quot;</span>
+</span><span id="__span-37-9"><a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a>
+</span><span id="__span-37-10"><a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a><span class="k">[target.win-64.tasks]</span>
+</span><span id="__span-37-11"><a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;echo $TEMP&quot;</span>
+</span><span id="__span-37-12"><a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a>
+</span><span id="__span-37-13"><a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a><span class="k">[target.osx-64.dependencies]</span>
+</span><span id="__span-37-14"><a id="__codelineno-37-14" name="__codelineno-37-14" href="#__codelineno-37-14"></a><span class="n">clang</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=16.0.6&quot;</span>
+</span></code></pre></div>
+<h2 id="feature-environments"><code>feature</code> 和 <code>environments</code> 表<a class="headerlink" href="#feature-environments" title="Permanent link">#</a></h2>
+<p><code>feature</code> 表允许你定义可以用来创建不同的 <code>[environments]</code> 的功能。
+<code>[environments]</code> 表允许你定义不同的环境。其设计在 <a href="../../features/multi_environment/">此设计文档</a> 中有详细解释。</p>
+<div class="language-toml highlight"><span class="filename">最简单的示例</span><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="k">[feature.test.dependencies]</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="n">pytest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;*&quot;</span>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="k">[environments]</span>
+</span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;test&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<p>这将创建一个名为 <code>test</code> 的环境，其中安装了 <code>pytest</code>。</p>
+<h3 id="feature"><code>feature</code> 表<a class="headerlink" href="#feature" title="Permanent link">#</a></h3>
+<p><code>feature</code> 表允许你为每个功能定义以下字段：</p>
+<ul>
+<li><code>dependencies</code>：与 <a href="#dependencies">dependencies</a> 相同。</li>
+<li><code>pypi-dependencies</code>：与 <a href="#pypi-dependencies">pypi-dependencies</a> 相同。</li>
+<li><code>pypi-options</code>：与 <a href="#the-pypi-options-table">pypi-options</a> 相同。</li>
+<li><code>system-requirements</code>：与 <a href="#system-requirements">system-requirements</a> 相同。</li>
+<li><code>activation</code>：与 <a href="#activation">activation</a> 相同。</li>
+<li><code>platforms</code>：与 <a href="#platforms">platforms</a> 相同。如果没有覆盖，功能的 <code>platforms</code> 将与项目级别定义的相同。</li>
+<li><code>channels</code>：与 <a href="#channels">channels</a> 相同。如果没有覆盖，功能的 <code>channels</code> 将与项目级别定义的相同。</li>
+<li><code>channel-priority</code>：与 <a href="#channel-priority">channel-priority</a> 相同。</li>
+<li><code>target</code>：与 <a href="#target">target</a> 相同。</li>
+<li><code>tasks</code>：与 <a href="#tasks">tasks</a> 相同。</li>
+</ul>
+<p>这些表也可以不带 <code>feature</code> 前缀使用。
+当它们被使用时，我们称之为 <code>default</code> 功能。<code>default</code> 是一个受保护的名称，你不能为自己的功能使用此名称。</p>
+<div class="language-toml highlight"><span class="filename">Cuda 特性表示例</span><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="k">[feature.cuda]</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="n">activation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">scripts</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;cuda_activation.sh&quot;</span><span class="p">]}</span>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="c1"># 默认情况下，结果是: [&quot;nvidia&quot;, &quot;conda-forge&quot;]，当默认为 `conda-forge` 时</span>
+</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="n">channels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;nvidia&quot;</span><span class="p">]</span>
+</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">cuda</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;x.y.z&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cudnn</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;12.0&quot;</span><span class="p">}</span>
+</span><span id="__span-39-6"><a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a><span class="n">pypi-dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">torch</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;==1.9.0&quot;</span><span class="p">}</span>
+</span><span id="__span-39-7"><a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a><span class="n">platforms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;linux-64&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;osx-arm64&quot;</span><span class="p">]</span>
+</span><span id="__span-39-8"><a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a><span class="n">system-requirements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">cuda</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;12&quot;</span><span class="p">}</span>
+</span><span id="__span-39-9"><a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a><span class="n">tasks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">warmup</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;python warmup.py&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-39-10"><a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a><span class="n">target</span><span class="p">.</span><span class="n">osx-arm64</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">dependencies</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="n">mlx</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;x.y.z&quot;</span><span class="p">}}</span>
+</span></code></pre></div>
+<div class="language-toml highlight"><span class="filename">Cuda 特性表示例，但写作分开的表</span><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="k">[feature.cuda.activation]</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="n">scripts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;cuda_activation.sh&quot;</span><span class="p">]</span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="k">[feature.cuda.dependencies]</span>
+</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="n">cuda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;x.y.z&quot;</span>
+</span><span id="__span-40-6"><a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a><span class="n">cudnn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;12.0&quot;</span>
+</span><span id="__span-40-7"><a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a>
+</span><span id="__span-40-8"><a id="__codelineno-40-8" name="__codelineno-40-8" href="#__codelineno-40-8"></a><span class="k">[feature.cuda.pypi-dependencies]</span>
+</span><span id="__span-40-9"><a id="__codelineno-40-9" name="__codelineno-40-9" href="#__codelineno-40-9"></a><span class="n">torch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;==1.9.0&quot;</span>
+</span><span id="__span-40-10"><a id="__codelineno-40-10" name="__codelineno-40-10" href="#__codelineno-40-10"></a>
+</span><span id="__span-40-11"><a id="__codelineno-40-11" name="__codelineno-40-11" href="#__codelineno-40-11"></a><span class="k">[feature.cuda.system-requirements]</span>
+</span><span id="__span-40-12"><a id="__codelineno-40-12" name="__codelineno-40-12" href="#__codelineno-40-12"></a><span class="n">cuda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;12&quot;</span>
+</span><span id="__span-40-13"><a id="__codelineno-40-13" name="__codelineno-40-13" href="#__codelineno-40-13"></a>
+</span><span id="__span-40-14"><a id="__codelineno-40-14" name="__codelineno-40-14" href="#__codelineno-40-14"></a><span class="k">[feature.cuda.tasks]</span>
+</span><span id="__span-40-15"><a id="__codelineno-40-15" name="__codelineno-40-15" href="#__codelineno-40-15"></a><span class="n">warmup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;python warmup.py&quot;</span>
+</span><span id="__span-40-16"><a id="__codelineno-40-16" name="__codelineno-40-16" href="#__codelineno-40-16"></a>
+</span><span id="__span-40-17"><a id="__codelineno-40-17" name="__codelineno-40-17" href="#__codelineno-40-17"></a><span class="k">[feature.cuda.target.osx-arm64.dependencies]</span>
+</span><span id="__span-40-18"><a id="__codelineno-40-18" name="__codelineno-40-18" href="#__codelineno-40-18"></a><span class="n">mlx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;x.y.z&quot;</span>
+</span><span id="__span-40-19"><a id="__codelineno-40-19" name="__codelineno-40-19" href="#__codelineno-40-19"></a>
+</span><span id="__span-40-20"><a id="__codelineno-40-20" name="__codelineno-40-20" href="#__codelineno-40-20"></a><span class="c1"># Channels 和 Platforms 不能作为单独的表格存在，因为它们是作为列表实现的</span>
+</span><span id="__span-40-21"><a id="__codelineno-40-21" name="__codelineno-40-21" href="#__codelineno-40-21"></a><span class="k">[feature.cuda]</span>
+</span><span id="__span-40-22"><a id="__codelineno-40-22" name="__codelineno-40-22" href="#__codelineno-40-22"></a><span class="n">channels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;nvidia&quot;</span><span class="p">]</span>
+</span><span id="__span-40-23"><a id="__codelineno-40-23" name="__codelineno-40-23" href="#__codelineno-40-23"></a><span class="n">platforms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;linux-64&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;osx-arm64&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<h3 id="environments"><code>environments</code> 表<a class="headerlink" href="#environments" title="Permanent link">#</a></h3>
+<p><code>[environments]</code> 表允许你定义使用 <code>[feature]</code> 表中定义的功能创建的环境。</p>
+<p><code>environments</code> 表使用以下字段进行定义：</p>
+<ul>
+<li><code>features</code>：包含在环境中的功能。除非 <code>no-default-feature</code> 设置为 <code>true</code>，否则默认功能会隐式包含在环境中。</li>
+<li><code>solve-group</code>：<code>solve-group</code> 用于在求解阶段将环境分组在一起。
+  这对于需要具有相同依赖项但可能通过附加依赖项扩展它们的环境非常有用。
+  例如，在测试生产环境时添加额外的测试依赖项。
+  这些依赖项将会在所有具有相同求解组的环境中保持相同版本。
+  但不同的环境包含不同子集的求解组依赖项集。</li>
+<li><code>no-default-feature</code>：是否在该环境中包含默认功能。默认值为 <code>false</code>，表示包括默认功能。</li>
+</ul>
+<div class="language-toml highlight"><span class="filename">完整的 environments 表规范</span><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="k">[environments]</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">features</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;test&quot;</span><span class="p">],</span><span class="w"> </span><span class="n">solve-group</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="p">}</span>
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="n">prod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">features</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;prod&quot;</span><span class="p">],</span><span class="w"> </span><span class="n">solve-group</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="p">}</span>
+</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="n">lint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">features</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;lint&quot;</span><span class="p">],</span><span class="w"> </span><span class="n">no-default-feature</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="p">}</span>
+</span></code></pre></div>
+<p>如上例所示，在最简单的情况下，可以仅通过列出其功能来定义一个环境：</p>
+<div class="language-toml highlight"><span class="filename">最简单的示例</span><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="k">[environments]</span>
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;test&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<p>等同于</p>
+<div class="language-toml highlight"><span class="filename">最简单的示例扩展</span><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="k">[environments]</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">features</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;test&quot;</span><span class="p">]}</span>
+</span></code></pre></div>
+<p>当一个环境包含多个功能（包括默认功能）时：</p>
+<ul>
+<li>环境的 <code>activation</code> 和 <code>tasks</code> 是其所有功能的 <code>activation</code> 和 <code>tasks</code> 的并集。</li>
+<li>环境的 <code>dependencies</code> 和 <code>pypi-dependencies</code> 是其所有功能的 <code>dependencies</code> 和 <code>pypi-dependencies</code> 的并集。这意味着如果多个功能定义了对相同包的需求，这些需求将被合并。注意避免在添加到同一环境的功能之间出现冲突的需求。</li>
+<li>环境的 <code>system-requirements</code> 是其所有功能的 <code>system-requirements</code> 的并集。如果多个功能指定了相同系统包的需求，则选择最高版本。</li>
+<li>环境的 <code>channels</code> 是其所有功能的 <code>channels</code> 的并集。可以在每个功能中指定通道优先级，以确保在环境中按正确的顺序考虑通道。</li>
+<li>环境的 <code>platforms</code> 是其所有功能的 <code>platforms</code> 的交集。请注意，功能支持的平台（包括默认功能）将被视为在项目级别定义的 <code>platforms</code>（除非在功能中被覆盖）。因此，通常最好将项目的 <code>platforms</code> 设置为它可以跨其环境支持的所有平台。</li>
+</ul>
+<h2 id="_7">全局配置<a class="headerlink" href="#_7" title="Permanent link">#</a></h2>
+<p>全局配置选项在 <a href="../pixi_configuration/">全局配置</a> 部分有文档说明。</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Footer -->
+<footer class="md-footer">
+    <!-- Link to previous and/or next page -->
+    
+      
+        
+        <nav
+          class="md-footer__inner md-grid"
+          aria-label="页脚"
+          
+        >
+
+          <!-- Link to previous page -->
+          
+            
+            <a
+              href="../../advanced/pyproject_toml/"
+              class="md-footer__link md-footer__link--prev"
+              aria-label="上一页: Pyproject.toml"
+            >
+              <div class="md-footer__button md-icon">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+              </div>
+              <div class="md-footer__title">
+                <span class="md-footer__direction">
+                  上一页
+                </span>
+                <div class="md-ellipsis">
+                  Pyproject.toml
+                </div>
+              </div>
+            </a>
+          
+
+          <!-- Link to next page -->
+          
+            
+            <a
+              href="../pixi_configuration/"
+              class="md-footer__link md-footer__link--next"
+              aria-label="下一页: Pixi 配置"
+            >
+              <div class="md-footer__title">
+                <span class="md-footer__direction">
+                  下一页
+                </span>
+                <div class="md-ellipsis">
+                  Pixi 配置
+                </div>
+              </div>
+              <div class="md-footer__button md-icon">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+              </div>
+            </a>
+          
+        </nav>
+      
+    
+
+    <!-- Further information -->
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+
+        <!-- prefix logo -->
+        <div class="md-footer-meta__item md-footer-meta__item--prefix-logo">
+            <a href="https://prefix.dev" target="_blank">
+                <img src="../../assets/logo_dark.svg" alt="">
+            </a>
+        </div>
+
+        <!-- Social links -->
+        
+          <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/prefix_dev" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/prefix-dev" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/prefix-dev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+        
+      </div>
+    </div>
+  </footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "content.code.copy", "content.action.edit", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>
